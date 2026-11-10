@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050906">
+  <title>MLBB Dataset | Cyber Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrixCanvas"></canvas>
+  <div class="scanlines"></div>
+  <div class="screen-vignette"></div>
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">◈</span> MLBB<span class="green">_RESEARCH</span></div>
+    <div class="system-status"><span class="status-dot"></span> SYSTEM ONLINE</div>
+    <div class="top-right">CLASSIFICATION PROJECT <span class="green">/ 2026</span></div>
+  </header>
+
+  <main id="presentation">
+    <!-- 01 COVER -->
+    <section class="slide active" data-title="Cover">
+      <div class="slide-content cover-layout">
+        <div class="terminal-tag reveal">INITIALIZING RESEARCH ENVIRONMENT...</div>
+        <div class="cover-kicker reveal">MACHINE LEARNING / DATA ANALYSIS</div>
+        <h1 class="glitch reveal" data-text="MLBB HERO">MLBB HERO</h1>
+        <h2 class="cover-subtitle reveal">PRIMARY ROLE <span class="green">CLASSIFICATION</span></h2>
+        <p class="lead reveal">Eksperimen Machine Learning untuk klasifikasi primary role hero Mobile Legends: Bang Bang.</p>
+        <div class="cover-line reveal"></div>
+        <div class="cover-meta reveal">
+          <div><small>RESEARCHER 01</small><strong>Bagus Wijaya Kusuma</strong><span>3420250013</span></div>
+          <div><small>RESEARCHER 02</small><strong>Fahmy Dhia Ulhaq</strong><span>3420250002</span></div>
+          <div><small>COURSE</small><strong>Metode Perancangan Program</strong></div>
+        </div>
+        <div class="scroll-hint reveal">PRESS <b>→</b> TO INITIALIZE PRESENTATION</div>
+      </div>
+      <div class="cover-decoration"><div class="radar"></div><span>DATA CORE<br>ACTIVE</span></div>
+    </section>
+
+    <!-- 02 BACKGROUND -->
+    <section class="slide" data-title="Latar Belakang">
+      <div class="slide-content">
+        <div class="eyebrow reveal">01 / INTRODUCTION</div>
+        <h2 class="section-title reveal">LATAR <span> BELAKANG</span></h2>
+        <p class="section-desc reveal">Mengubah data atribut hero menjadi informasi yang dapat dianalisis menggunakan pendekatan machine learning.</p>
+        <div class="grid-3">
+          <article class="info-card reveal"><span class="card-index">01</span><div class="card-icon">⌘</div><h3>DATA COMPLEXITY</h3><p>Setiap hero memiliki atribut statistik yang berbeda, seperti HP, Mana, Attack, Defence, dan Regen.</p></article>
+          <article class="info-card reveal"><span class="card-index">02</span><div class="card-icon">◉</div><h3>CLASSIFICATION</h3><p>Primary Role digunakan sebagai target klasifikasi dengan enam kategori role hero.</p></article>
+          <article class="info-card reveal"><span class="card-index">03</span><div class="card-icon">⌁</div><h3>MACHINE LEARNING</h3><p>Beberapa algoritma diuji untuk melihat kemampuan model dalam mengenali pola data.</p></article>
+        </div>
+        <div class="terminal-box reveal"><span class="terminal-label">RESEARCH_OBJECTIVE</span><p><span class="green">root@mlbb:~$</span> Menganalisis performa model klasifikasi dan pola atribut hero berdasarkan dataset.</p></div>
+      </div>
+    </section>
+
+    <!-- 03 DATASET -->
+    <section class="slide" data-title="Dataset">
+      <div class="slide-content">
+        <div class="eyebrow reveal">02 / DATA SOURCE</div>
+        <h2 class="section-title reveal">DATASET <span>OVERVIEW</span></h2>
+        <p class="section-desc reveal">Dataset hero Mobile Legends yang digunakan dalam eksperimen.</p>
+        <div class="stats-grid">
+          <div class="stat-card reveal"><small>TOTAL HEROES</small><strong class="counter" data-target="114">0</strong><span>Data records</span></div>
+          <div class="stat-card reveal"><small>TOTAL FEATURES</small><strong class="counter" data-target="18">0</strong><span>Dataset columns</span></div>
+          <div class="stat-card reveal"><small>PRIMARY ROLES</small><strong class="counter" data-target="6">0</strong><span>Target classes</span></div>
+          <div class="stat-card reveal"><small>LANE CATEGORIES</small><strong class="counter" data-target="5">0</strong><span>Lane groups</span></div>
+        </div>
+        <div class="terminal-box reveal">
+          <div class="terminal-head"><span>dataset.csv</span><span>● ● ●</span></div>
+          <pre><span class="green">LOAD DATASET</span>
+File       : Mlbb_Heroes.csv
+Records    : 114 heroes
+Features   : 18 columns
+Target     : Primary_Role
+Status     : <span class="green">SUCCESSFULLY LOADED</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 DISTRIBUTION -->
+    <section class="slide" data-title="Distribusi Data">
+      <div class="slide-content">
+        <div class="eyebrow reveal">03 / EXPLORATORY DATA ANALYSIS</div>
+        <h2 class="section-title reveal">DATA <span>DISTRIBUTION</span></h2>
+        <p class="section-desc reveal">Distribusi jumlah hero berdasarkan primary role dan lane.</p>
+        <div class="chart-grid">
+          <div class="chart-panel reveal"><div class="panel-heading"><span>01 / PRIMARY ROLE</span><i>114 RECORDS</i></div><div class="chart-wrap"><canvas id="roleChart"></canvas></div></div>
+          <div class="chart-panel reveal"><div class="panel-heading"><span>02 / LANE DISTRIBUTION</span><i>114 RECORDS</i></div><div class="chart-wrap"><canvas id="laneChart"></canvas></div></div>
+        </div>
+        <p class="footnote reveal">Primary Role: Fighter 33, Mage 25, Marksman 18, Tank 16, Assassin 13, Support 9.</p>
+      </div>
+    </section>
+
+    <!-- 05 PREPROCESSING -->
+    <section class="slide" data-title="Preprocessing">
+      <div class="slide-content">
+        <div class="eyebrow reveal">04 / DATA PREPARATION</div>
+        <h2 class="section-title reveal">DATA <span>PREPROCESSING</span></h2>
+        <p class="section-desc reveal">Tahapan persiapan data sebelum proses pelatihan model.</p>
+        <div class="process-flow">
+          <div class="process-card reveal"><b>01</b><h3>INSPECTION</h3><p>Memeriksa struktur dataset dan nilai yang hilang.</p></div>
+          <div class="process-arrow reveal">➜</div>
+          <div class="process-card reveal"><b>02</b><h3>CLEANING</h3><p>Menangani missing values pada kolom terkait.</p></div>
+          <div class="process-arrow reveal">➜</div>
+          <div class="process-card reveal"><b>03</b><h3>FEATURE ENGINEERING</h3><p>Membuat fitur turunan dari atribut yang tersedia.</p></div>
+          <div class="process-arrow reveal">➜</div>
+          <div class="process-card reveal"><b>04</b><h3>SCALING</h3><p>StandardScaler untuk Logistic Regression dan SVM.</p></div>
+        </div>
+        <div class="table-panel reveal">
+          <div class="panel-heading"><span>GENERATED FEATURES</span><i>FEATURE ENGINEERING</i></div>
+          <div class="table-scroll"><table><thead><tr><th>FEATURE</th><th>DESCRIPTION</th></tr></thead><tbody>
+            <tr><td>Total_Defence</td><td>Gabungan atribut pertahanan</td></tr>
+            <tr><td>Total_Regen</td><td>Gabungan atribut regenerasi</td></tr>
+            <tr><td>Total_Matches</td><td>Total pertandingan</td></tr>
+            <tr><td>Win_Rate</td><td>Persentase kemenangan</td></tr>
+            <tr><td>Has_Secondary_Role</td><td>Indikator secondary role</td></tr>
+            <tr><td>Is_Mana_Hero</td><td>Indikator penggunaan Mana</td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 METHODOLOGY -->
+    <section class="slide" data-title="Metodologi">
+      <div class="slide-content">
+        <div class="eyebrow reveal">05 / EXPERIMENT DESIGN</div>
+        <h2 class="section-title reveal">EXPERIMENT <span>METHODOLOGY</span></h2>
+        <p class="section-desc reveal">Model dan metode evaluasi yang digunakan dalam eksperimen.</p>
+        <div class="grid-2">
+          <div class="terminal-box reveal"><div class="terminal-head"><span>CLASSIFICATION_MODELS</span><span class="green">5 MODELS</span></div>
+            <ul class="model-list">
+              <li><b>01</b> Logistic Regression</li><li><b>02</b> Random Forest</li><li><b>03</b> Gradient Boosting</li><li><b>04</b> Support Vector Machine</li><li><b>05</b> Gaussian Naive Bayes</li>
+            </ul>
+          </div>
+          <div class="terminal-box reveal"><div class="terminal-head"><span>VALIDATION_CONFIG</span><span class="green">ACTIVE</span></div>
+            <div class="config-row"><span>Train / Test Split</span><b>80 / 20</b></div>
+            <div class="config-row"><span>Cross Validation</span><b>5-FOLD</b></div>
+            <div class="config-row"><span>Feature Scaling</span><b>STANDARD SCALER</b></div>
+            <div class="config-row"><span>Clustering</span><b>K-MEANS (4)</b></div>
+            <div class="config-row"><span>Target Variable</span><b>PRIMARY ROLE</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 MODEL COMPARISON -->
+    <section class="slide" data-title="Perbandingan Model">
+      <div class="slide-content">
+        <div class="eyebrow reveal">06 / MODEL PERFORMANCE</div>
+        <h2 class="section-title reveal">MODEL <span>COMPARISON</span></h2>
+        <p class="section-desc reveal">Perbandingan hasil evaluasi model pada skenario eksperimen yang tercantum dalam laporan.</p>
+        <div class="chart-panel wide-chart reveal">
+          <div class="panel-heading"><span>ACCURACY & F1 MACRO</span><i>TEST SET / PERCENT</i></div>
+          <div class="chart-wrap large"><canvas id="accuracyChart"></canvas></div>
+        </div>
+        <div class="insight-row reveal"><span class="insight-icon">▣</span><p>Gradient Boosting pada skenario clean memperoleh Accuracy <b>73,9%</b> dan F1 Macro <b>65,2%</b>.</p></div>
+      </div>
+    </section>
+
+    <!-- 08 CROSS VALIDATION -->
+    <section class="slide" data-title="Cross Validation">
+      <div class="slide-content">
+        <div class="eyebrow reveal">07 / ROBUSTNESS TEST</div>
+        <h2 class="section-title reveal">CROSS <span>VALIDATION</span></h2>
+        <p class="section-desc reveal">Perbandingan rata-rata F1 Macro menggunakan Stratified 5-Fold Cross Validation.</p>
+        <div class="chart-panel wide-chart reveal">
+          <div class="panel-heading"><span>MEAN F1 MACRO</span><i>5-FOLD VALIDATION</i></div>
+          <div class="chart-wrap large"><canvas id="cvChart"></canvas></div>
+        </div>
+        <div class="terminal-box reveal"><span class="terminal-label">ANALYSIS_LOG</span><p>Hasil cross validation menunjukkan Gradient Boosting dan Random Forest pada skenario clean memiliki nilai mean F1 Macro yang berdekatan.</p></div>
+      </div>
+    </section>
+
+    <!-- 09 CLASSIFICATION -->
+    <section class="slide" data-title="Evaluasi Model">
+      <div class="slide-content">
+        <div class="eyebrow reveal">08 / CLASSIFICATION REPORT</div>
+        <h2 class="section-title reveal">CLASSIFICATION <span>REPORT</span></h2>
+        <p class="section-desc reveal">Nilai F1-score tiap kelas berdasarkan classification report.</p>
+        <div class="table-panel reveal">
+          <div class="panel-heading"><span>PER-CLASS F1 SCORE</span><i>MODEL EVALUATION</i></div>
+          <div class="table-scroll"><table class="score-table"><thead><tr><th>CLASS</th><th>SUPPORT</th><th>F1-SCORE</th><th>STATUS</th></tr></thead><tbody>
+            <tr><td>Assassin</td><td>2</td><td><div class="score-bar"><span data-width="67%"></span></div>0.67</td><td class="green">DETECTED</td></tr>
+            <tr><td>Fighter</td><td>7</td><td><div class="score-bar"><span data-width="77%"></span></div>0.77</td><td class="green">DETECTED</td></tr>
+            <tr><td>Mage</td><td>5</td><td><div class="score-bar"><span data-width="73%"></span></div>0.73</td><td class="green">DETECTED</td></tr>
+            <tr><td>Marksman</td><td>4</td><td><div class="score-bar"><span data-width="75%"></span></div>0.75</td><td class="green">DETECTED</td></tr>
+            <tr><td>Support</td><td>2</td><td><div class="score-bar"><span data-width="0%"></span></div>0.00</td><td class="warning">LOW SCORE</td></tr>
+            <tr><td>Tank</td><td>3</td><td><div class="score-bar"><span data-width="100%"></span></div>1.00</td><td class="green">DETECTED</td></tr>
+          </tbody></table></div>
+        </div>
+        <div class="insight-row reveal"><span class="insight-icon">!</span><p>Kelas Support memperoleh F1-score 0,00. Hal ini menunjukkan model belum berhasil mengenali kelas tersebut pada hasil evaluasi ini.</p></div>
+      </div>
+    </section>
+
+    <!-- 10 FEATURE IMPORTANCE -->
+    <section class="slide" data-title="Feature Importance">
+      <div class="slide-content">
+        <div class="eyebrow reveal">09 / FEATURE ANALYSIS</div>
+        <h2 class="section-title reveal">FEATURE <span>IMPORTANCE</span></h2>
+        <p class="section-desc reveal">Lima fitur dengan nilai importance tertinggi berdasarkan hasil laporan.</p>
+        <div class="chart-panel wide-chart reveal">
+          <div class="panel-heading"><span>TOP 5 FEATURES</span><i>IMPORTANCE VALUE</i></div>
+          <div class="chart-wrap large"><canvas id="importanceChart"></canvas></div>
+        </div>
+        <div class="terminal-box reveal"><span class="terminal-label">FEATURE_INSIGHT</span><p>HP, Mana, dan HP Regen merupakan tiga fitur dengan nilai importance tertinggi pada hasil analisis.</p></div>
+      </div>
+    </section>
+
+    <!-- 11 CLUSTERING -->
+    <section class="slide" data-title="Clustering">
+      <div class="slide-content">
+        <div class="eyebrow reveal">10 / UNSUPERVISED LEARNING</div>
+        <h2 class="section-title reveal">K-MEANS <span>CLUSTERING</span></h2>
+        <p class="section-desc reveal">Pengelompokan hero menjadi empat cluster berdasarkan karakteristik atribut.</p>
+        <div class="cluster-grid">
+          <div class="cluster-card reveal"><span>CLUSTER 00</span><strong class="counter" data-target="52">0</strong><small>HEROES</small><p>Avg HP: 2490.7<br>Physical Damage: 112.0</p></div>
+          <div class="cluster-card reveal"><span>CLUSTER 01</span><strong class="counter" data-target="29">0</strong><small>HEROES</small><p>Avg HP: 2595.6<br>Physical Damage: 116.7</p></div>
+          <div class="cluster-card reveal"><span>CLUSTER 02</span><strong class="counter" data-target="31">0</strong><small>HEROES</small><p>Avg HP: 2699.1<br>Physical Damage: 121.5</p></div>
+          <div class="cluster-card reveal"><span>CLUSTER 03</span><strong class="counter" data-target="2">0</strong><small>HEROES</small><p>Avg HP: 2707.5<br>Physical Damage: 120.5</p></div>
+        </div>
+        <div class="terminal-box reveal"><span class="terminal-label">CLUSTERING_CONFIG</span><p>Algorithm: K-Means | Number of clusters: 4 | Total grouped heroes: 114</p></div>
+      </div>
+    </section>
+
+    <!-- 12 CONCLUSION -->
+    <section class="slide" data-title="Kesimpulan">
+      <div class="slide-content">
+        <div class="eyebrow reveal">11 / FINAL ANALYSIS</div>
+        <h2 class="section-title reveal">RESEARCH <span>CONCLUSION</span></h2>
+        <p class="section-desc reveal">Ringkasan hasil eksperimen klasifikasi primary role hero MLBB.</p>
+        <div class="conclusion-list">
+          <div class="conclusion-item reveal"><b>01</b><p>Gradient Boosting clean menghasilkan Accuracy 73,9% pada pengujian single split.</p></div>
+          <div class="conclusion-item reveal"><b>02</b><p>Penambahan fitur esports tidak selalu meningkatkan performa model.</p></div>
+          <div class="conclusion-item reveal"><b>03</b><p>Kelas Support masih menjadi tantangan dalam proses klasifikasi.</p></div>
+          <div class="conclusion-item reveal"><b>04</b><p>Penggunaan fitur Lane berpotensi menyebabkan data leakage dalam klasifikasi role.</p></div>
+          <div class="conclusion-item reveal"><b>05</b><p>Penelitian selanjutnya dapat berfokus pada penambahan data dan penanganan ketidakseimbangan kelas.</p></div>
+        </div>
+        <div class="final-terminal reveal">
+          <span class="green">root@mlbb:~$</span> research_status --complete
+          <strong>EXPERIMENT COMPLETED <span class="blink">_</span></strong>
+          <small>THANK YOU FOR YOUR ATTENTION</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="controls">
+    <div class="control-left"><span id="slideName">Cover</span><span class="control-divider">|</span><span><b id="current">01</b> / <span id="total">12</span></span></div>
+    <div class="progress-track"><div id="progress"></div></div>
+    <div class="control-buttons">
+      <button id="overviewBtn" aria-label="Overview">▦</button>
+      <button id="prevBtn" aria-label="Previous slide">←</button>
+      <button id="nextBtn" aria-label="Next slide">→</button>
+      <button id="fullscreenBtn" aria-label="Fullscreen">⛶</button>
+    </div>
+  </footer>
+
+  <div class="overview" id="overview" aria-hidden="true">
+    <div class="overview-box">
+      <div class="overview-top"><span>SELECT SLIDE / OVERVIEW</span><button id="closeOverviewBtn">✕</button></div>
+      <div class="overview-grid" id="overviewGrid"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
